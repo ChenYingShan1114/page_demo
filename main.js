@@ -1,6 +1,6 @@
-import * as THREE from 'three';
-//import * as THREE.from 'https://unpkg.com/three@0.127.0/build/three.module.js'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+//import * as THREE from 'three';
+import * as THREE from 'https://unpkg.com/three@0.127.0/build/three.module.js'
+//import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 // constant
 const eV = 1.60217662e-19; // J
@@ -168,8 +168,8 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setAnimationLoop( animate );
 document.body.appendChild( renderer.domElement );
 
-const orbit = new OrbitControls(camera, renderer.domElement);
-orbit.target.set(0, 0, 0);
+//const orbit = new OrbitControls(camera, renderer.domElement);
+//orbit.target.set(0, 0, 0);
 
 const axesHelper = new THREE.AxesHelper( 100 );
 //scene.add( axesHelper );
@@ -229,8 +229,8 @@ for (let i = 0; i < num; i++) {
 }
 
 camera.position.set(ini_x, 60, 130);
-orbit.target.set(x[index], 0, 0);
-orbit.update();
+// orbit.target.set(x[index], 0, 0);
+// orbit.update();
 
 let step = 1;
 function animate() {
@@ -255,11 +255,11 @@ function animate() {
         step++;
         if ( x[index] < -30) {
             camera.position.x = x[index];
-            orbit.target.x = x[index];
+            // orbit.target.x = x[index];
         } else {
             camera.position.z += 0.5;
         }
-	    orbit.update();
+	    // orbit.update();
     }
 
     /*rk4
